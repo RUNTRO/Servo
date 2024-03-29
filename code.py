@@ -10,8 +10,12 @@ i2c = busio.I2C(board.GP3, board.GP2)  # uses first I2C SCA/SCL pair on pico
 sensor = adafruit_tcs34725.TCS34725(i2c)
 
 # Change sensor gain to 1, 4, 16, or 60
+sensor_gain = 4
+
 sensor.gain = sensor_gain
 # Change sensor integration time to values between 2.4 and 614.4 milliseconds
+sensor_integration_time = 150
+
 sensor.integration_time = sensor_integration_time
 
 # create a PWMOut object on Pin A2.
